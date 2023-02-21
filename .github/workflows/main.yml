@@ -1,0 +1,19 @@
+name: my-first-actions
+# 触发workflow事件
+on:
+# 设置actions执行时机，此处为master分支pull时触发
+  pull:
+    branches:
+    - master
+# action的job
+jobs:
+  # 一个jobs任务，名称为build
+  build:
+    # 运行基础环境，设置为ubuntu
+    runs-on: ubuntu-master
+    # jobs任务的步骤
+    steps:
+      - name: test
+      run: echo "test"
+      - name: success
+      run: echo "success"
