@@ -11,11 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     # jobs任务的步骤
     steps: 
-      - name: install
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-      - run: npm install -g bats
         with:
           node-version: '14'
-      - name: run
+      - run: npm install -g bats
       - run: bats -v
