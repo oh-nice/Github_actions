@@ -1,7 +1,7 @@
 name: my-first-actions
 run-name: ${{github.actor}} is learning Github Actions
 # 触发workflow事件
-on: [pull]
+on: [push]
 # 设置actions执行时机，此处为master分支pull时触发
 # action的job
 jobs:
