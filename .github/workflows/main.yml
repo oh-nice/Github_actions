@@ -13,8 +13,12 @@ jobs:
     # 运行基础环境，设置为ubuntu
     runs-on: ubuntu-latest
     # jobs任务的步骤
-    steps:
+    steps: 
       - name: install
-      run: npm install -g bats
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: npm install -g bats
+        with:
+          node-version: '14'
       - name: run
-      run: bats -v
+      - run: bats -v
