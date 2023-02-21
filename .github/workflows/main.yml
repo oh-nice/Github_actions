@@ -10,7 +10,7 @@ jobs:
   # 一个jobs任务，名称为build
   build:
     # 运行基础环境，设置为ubuntu
-    runs-on: ubuntu-master
+    runs-on: ubuntu-lastest
     # jobs任务的步骤
     steps:
       - name: test
