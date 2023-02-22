@@ -50,9 +50,9 @@ jobs:
       - name: npm install
         run: npm install -g bats
       - name: npm install
-        run: bats -v
+        run: bats -v > output.txt
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
         with:
           name: "测试文件名"
-          path: "./测试"
+          path: "./output.txt"
