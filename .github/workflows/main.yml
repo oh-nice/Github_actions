@@ -22,7 +22,7 @@ on:
       environment:
         description: "环境选项"
         type: environment
-        required: true
+        required: false
 
 # action的job
 jobs:
@@ -53,3 +53,6 @@ jobs:
         run: bats -v
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
+        with:
+          name: "测试文件名"
+          path: "./测试"
