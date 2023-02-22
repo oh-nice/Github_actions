@@ -22,7 +22,7 @@ on:
       environment:
         description: "环境选项"
         type: environment
-        required: true
+        required: false
 
 # action的job
 jobs:
