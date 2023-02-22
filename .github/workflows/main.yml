@@ -15,14 +15,15 @@ on:
       options-2:
         description: "测试选项二"
         required: false
-        type: boolen
-      environment:
-        description: "测试选项二"
-        type: environment
-        required: true
+        type: choice
         options:
         - 太阳
         - 月亮
+      environment:
+        description: "环境选项"
+        type: environment
+        required: true
+
 # action的job
 jobs:
   # 一个jobs任务，名称为build
