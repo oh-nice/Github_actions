@@ -14,9 +14,12 @@ on:
         - 黑夜
       options-2:
         description: "测试选项二"
+        required: false
+        type: boolen
+      environment:
+        description: "测试选项二"
+        type: environment
         required: true
-        default: "太阳"
-        type: choice
         options:
         - 太阳
         - 月亮
@@ -30,6 +33,15 @@ jobs:
     steps: 
       - name: Check out repo's default branch
         uses: actions/checkout@v3
+      - name: Print inputs
+        run: |
+          echo "测试选项一: $OPTIONS1"
+          echo "测试选项二: $OPTIONS2"
+          echo "environment: $ENVIRONMENT"
+        env:
+          OPTIONS1: ${{inputs.options-1}}
+          OPTIONS2: ${{inputs.options-2}}
+          ENVIRONMENT: ${{inputs.environment}}
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
