@@ -1,8 +1,25 @@
 name: my-first-actions
 run-name: ${{github.actor}} is learning Github Actions
-# 触发workflow事件
-on: [push]
 # 设置actions执行时机，此处为master分支pull时触发
+on: 
+  workflow_dispatch:
+    inputs:
+      options-1:
+        description: "测试选项一"
+        required: true
+        default: "白天"
+        type: choice
+        options:
+        - 白天
+        - 黑夜
+      options-2:
+        description: "测试选项二"
+        required: true
+        default: "太阳"
+        type: choice
+        options:
+        - 太阳
+        - 月亮
 # action的job
 jobs:
   # 一个jobs任务，名称为build
