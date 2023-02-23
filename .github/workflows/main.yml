@@ -1,5 +1,5 @@
 name: my-first-actions
-run-name: ${{github.actor}} is learning Github Actions
+run-name: Mr.Robot is learning Github Actions
 # 设置actions执行时机，此处为手动触发
 on: 
   workflow_dispatch:
