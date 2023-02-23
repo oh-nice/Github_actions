@@ -27,11 +27,15 @@ on:
 # action的job
 jobs:
   # 一个jobs任务，名称为build
+  env: 
+    name: "zhangsan"
   check-bats-version:
     # 运行基础环境，设置为ubuntu
     runs-on: ubuntu-latest
     # jobs任务的步骤
     steps: 
+        env:
+          age: 22
       - name: Check out repo's default branch
         uses: actions/checkout@v3
       - name: Print inputs
