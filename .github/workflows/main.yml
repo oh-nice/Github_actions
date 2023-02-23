@@ -56,3 +56,22 @@ jobs:
         with:
           name: "测试文件名"
           path: "./output.txt"
+  hello-world:
+    runs-on: windows-latest
+    steps:
+      # 克隆仓库
+      - name: Check out repo's default branch
+        uses: actions/checkout@v3
+      - name: Enable Developer Command Prompt
+        uses: ilammy/msvc-dev-cmd@v1.12.1
+      - name: Compile and run some Code
+        shell: cmd
+        run: |
+          cl.exe HelloWorld.cpp
+          HelloWorld.exe
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: "HelloWorld"
+          path: "./HelloWorld.exe"
+
