@@ -58,6 +58,7 @@ jobs:
           path: "./output.txt"
   hello-world:
     runs-on: windows-latest
+    needs: check-bats-version
     steps:
       # 克隆仓库
       - name: Check out repo's default branch
