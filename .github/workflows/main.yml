@@ -30,6 +30,7 @@ jobs:
   check-bats-version:
     # 运行基础环境，设置为ubuntu
     runs-on: ubuntu-latest
+    if: github.workflow == 'my-first-actions'
     env: 
       name: "zhangsan"
     # jobs任务的步骤
