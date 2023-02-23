@@ -34,9 +34,9 @@ jobs:
       name: "zhangsan"
     # jobs任务的步骤
     steps: 
+      - name: Print env
         env:
           age: 22
-      - name: Print env
         run: |
           echo $name
           echo $age
